@@ -1,13 +1,5 @@
+2
 6
-1
-a
-6
-llmllm
-6
-uwuuwu
-6
-byebye
-6
-oooioi
-12
-siixxsevvenn
+2 2 3 4 3 1
+5
+11 8 7 10 9

@@ -12,21 +12,28 @@ typedef long long ll;
  
 void Solve(){
     int n; cin >> n;
-    vector<ll>a;
+    multiset<int> a;
     for(int i=0; i<n; i++){
         int x; cin >> x;
-        a.push_back(x);
+        a.insert(x);
     }
-    sort(a.begin(),a.end());
-    int ans = 1;
-    for(int i=0; i<n-1; i++){
-        if(a[i]+1 != a[i+1]){
-            ans++;
-        }else{
-            a.erase(a.begin()+i);
+    int cnt = 0;
+    while (!a.empty())
+    {
+        cnt++;
+        auto take = *a.begin();
+        while (true)
+        {
+            auto it = a.find(take);
+            if (it == a.end())
+            {
+                break;
+            }
+            a.erase(it);
+            take++;
         }
     }
-    cout << ans << endl;
+    cout << cnt << endl;
 }
  
 int main(){
