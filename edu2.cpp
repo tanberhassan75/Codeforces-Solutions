@@ -12,29 +12,25 @@ typedef long long ll;
  
 void Solve(){
     int n,m; cin >> n >> m;
-    vector<int> a(n),b(m);
+    vector<ll> a(n), b(m);
+    map<ll,int> mp;
     for(int i=0; i<n; i++){
         cin >> a[i];
+        mp[a[i]]++;
     }
     for(int i=0; i<m; i++){
         cin >> b[i];
     }
-    int cnt = 0;
-    int l = 0,r=0;
-    while(r<m){
-        if(l < n && a[l] < b[r]){
-            cnt++;
-            l++;
-        }else{
-            cout << cnt << " ";
-            r++;
-        }
+    ll ans = 0;
+    for(auto x:b){
+        ans+=mp[x];
     }
-    
+    cout << ans << endl;
 }
+ 
 int main(){
     fastio;
-    Solve();
+        Solve();
     return 0;
 }
 // Code by Tanber
